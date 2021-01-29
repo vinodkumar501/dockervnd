@@ -1,0 +1,39 @@
+docker run -d -p 5000:50000 <image-name>    # image: static file
+docker container ls                         # running env of image
+docker container ls -a
+docker container start <container state>    #  starting container from another exited container
+docker container stop <cont-id>
+docker container start <cont-id>
+docker container logs <cont-id>
+
+remove 1 stopped container
+docker container rm <cont-id>
+
+	How to remove all stopped containers
+https://docs.docker.com/config/pruning/
+
+docker container prune
+
+$ docker image prune
+
+WARNING! This will remove all dangling images.
+Are you sure you want to continue? [y/N] y
+
+docker image prune -a --filter "until=24h"
+
+
+docker run -p 8080:8080 --name=jenkins-master jenkins/jenkins
+
+details of container
+
+docker container inspect <cong-id>
+
+How to check history of specific image	How that specific image has been created
+
+docker image history <image-id>
+
+
+https://github.com/in28minutes/docker
+
+docker run -d -p 5000:5000 in28min/todo-rest-api-h2:1.0.0.RELEASE
+docker run -d -p 8761:8761 springcloud/eureka
